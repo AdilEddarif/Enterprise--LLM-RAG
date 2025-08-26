@@ -42,3 +42,24 @@ Here is a screenshot of a use case being queried in the chatbot:
 - Pull a local model (default: `phi3:mini`):
   ```bash
   ollama pull phi3:mini
+  ```bash
+# 1. Clone the repo
+git clone https://github.com/AdilEddarif/Enterprise--LLM-RAG.git
+
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Install Ollama (if not installed) -> https://ollama.com/download
+#    Pull the default model
+ollama pull phi3:mini
+
+# 4. Preprocess your PDFs
+#    Put your enterprise PDF test cases inside the ./data folder first
+python preprocess_usecases.py --pdf_dir ./data --out_dir ./processed
+
+# 5. Start the FastAPI backend (leave this running)
+uvicorn app:app --reload --port 8000
+
+# 6. In a new terminal, start the Streamlit chatbot UI
+streamlit run chat_ui.py
