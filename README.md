@@ -42,7 +42,7 @@ Here is a screenshot of a use case being queried in the chatbot:
 - Pull a local model (default: `phi3:mini`):
   ```bash
   ollama pull phi3:mini
-  ```bash
+```bash
 # 1. Clone the repo
 git clone https://github.com/AdilEddarif/Enterprise--LLM-RAG.git
 
